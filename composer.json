@@ -17,6 +17,14 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+        ],
+        "post-update-cmd": [
+            "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+        ]
+    },
     "require": {
         "oomphinc/composer-installers-extender": "^2.0",
         "drupal/commerce": "^2.36",
