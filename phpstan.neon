@@ -1,0 +1,14 @@
+includes:
+  - ./vendor/mglaman/phpstan-drupal/extension.neon
+  - ./vendor/phpstan/phpstan-deprecation-rules/rules.neon
+
+parameters:
+  paths:
+    - src
+    - indie.install
+    - indie.profile
+  drupal:
+    drupal_root: %currentWorkingDirectory%/web
+  customRulesetUsed: true
+  reportUnmatchedIgnoredErrors: false
+  level: 3

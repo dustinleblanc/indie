@@ -1,0 +1,107 @@
+{
+    "name": "dustinleblanc/indie",
+    "description": "A Drupal install profile for indie creators",
+    "type": "drupal-profile",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Dustin LeBlanc",
+            "email": "dustin.m.leblanc@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "oomphinc/composer-installers-extender": "^2.0",
+        "drupal/commerce": "^2.36",
+        "drupal/symfony_mailer": "^1.4",
+        "drupal/gin": "^3.0@RC",
+        "drupal/gin_login": "^2.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-dev": "^10.1",
+        "kporras07/composer-symlinks": "^1.2",
+        "mglaman/phpstan-drupal": "^1.2",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "drush/drush": "^12.4",
+        "cweagans/composer-patches": "^1.7"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true,
+        "preferred-install": {
+            "drupal/core": "dist"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "oomphinc/composer-installers-extender": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "symlinks": {
+            "indie.profile": "web/profiles/indie/indie.profile",
+            "indie.install": "web/profiles/indie/indie.install",
+            "indie.info.yml": "web/profiles/indie/indie.info.yml",
+            "indie.links.menu.yml": "web/profiles/indie/indie.links.menu.yml",
+            "indie.services.yml": "web/profiles/indie/indie.services.yml",
+            "src": "web/profiles/indie/src",
+            "modules": "web/profiles/indie/modules",
+            "themes": "web/profiles/indie/themes",
+            "config/install": "web/profiles/indie/config/install",
+            "config/optional": "web/profiles/indie/config/optional",
+            "content": "web/profiles/indie/content"
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            },
+            "overwrite": true
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/profiles/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "libraries/{$name}": [
+                "furf/jquery-ui-touch-punch",
+                "select2/select2"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "patches": {}
+    }
+}
